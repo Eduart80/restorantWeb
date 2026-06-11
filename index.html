@@ -70,6 +70,20 @@
       transition: background 0.3s;
     }
     .nav-reserve:hover { background: var(--gold2); color: #fff; }
+    .nav-order {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      margin-right: 10px;
+    }
+    .nav-order:hover { background: var(--gold); color: var(--dark); }
 
     /* ── HERO ── */
     .hero {
@@ -252,6 +266,7 @@
     .specials .section-tag { }
     .specials .section-title { color: var(--white); }
     .specials .section-desc { color: rgba(255,255,255,0.5); }
+    .specials .section-line { color: var(--gold); }
     .specials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -427,6 +442,7 @@
     }
     .reservation .section-title { color: var(--white); }
     .reservation .section-desc { color: rgba(255,255,255,0.4); }
+    .reservation .section-line { color: var(--gold); }
     .res-form {
       display: flex; gap: 12px; justify-content: center;
       flex-wrap: wrap; max-width: 900px;
@@ -497,6 +513,7 @@
       <li><a href="#catering">Catering</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="nav-order">Order Online</a>
     <a href="#reservation" class="nav-reserve">Reserve a Table</a>
   </nav>
 
@@ -510,7 +527,7 @@
     </div>
     <div>
       <a href="#menu" class="btn-primary">View Menu</a>
-      <a href="#reservation" class="btn-solid">Reserve a Table</a>
+      <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="btn-solid">Order Online</a>
     </div>
     <div class="hero-scroll">Scroll</div>
   </section>
@@ -668,7 +685,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:50px;">
-      <a href="#" class="btn-primary" style="color:var(--dark);border-color:var(--dark);">View Full Menu</a>
+      <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="btn-solid">Order Online</a>
     </div>
   </section>
 
