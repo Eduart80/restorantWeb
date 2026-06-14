@@ -25,13 +25,16 @@ export default function Nav() {
     };
   }, [open]);
 
-  // After navigating to home, scroll to pending hash
-  const pendingHash = useRef(null);
+  // After navigating to home with a scrollTo state, scroll to that section
   useEffect(() => {
-    if (pendingHash.current && location.pathname === '/') {
-      const el = document.getElementById(pendingHash.current);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-      pendingHash.current = null;
+    if (location.state?.scrollTo && location.pathname === '/') {
+      const id = location.state.scrollTo;
+      // Small delay to let the page render before scrolling
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+      return () => clearTimeout(timer);
     }
   }, [location]);
 
@@ -41,8 +44,7 @@ export default function Nav() {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      pendingHash.current = id;
-      navigate('/');
+      navigate('/', { state: { scrollTo: id } });
     }
   }
 

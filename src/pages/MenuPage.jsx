@@ -54,8 +54,8 @@ export default function MenuPage() {
         </div>
 
         <div className="menu-grid menu-grid-page">
-          {filtered.map((item) => (
-            <div className="menu-item" key={item.name}>
+          {filtered.map((item, i) => (
+            <div className="menu-item" key={`${item.category}-${item.name}-${i}`}>
               <div
                 className="menu-item-img"
                 style={{ background: `url('${item.img}') center/cover` }}
@@ -69,6 +69,13 @@ export default function MenuPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="consumer-advisory" style={{ marginTop: '40px', textAlign: 'center' }}>
+          <div className="menu-item-desc">
+            <p>*Gluten-free options available. Please ask for details</p>
+            <p>Consumer Advisory: Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.<br/>
+  Please inform your server of any allergies or special dietary needs.</p>
+          </div>
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '60px' }}>

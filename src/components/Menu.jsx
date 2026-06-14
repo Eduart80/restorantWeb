@@ -26,8 +26,8 @@ export default function Menu() {
         ))}
       </div>
       <div className="menu-grid">
-        {filtered.map((item) => (
-          <div className="menu-item" key={item.name}>
+        {filtered.map((item, i) => (
+          <div className="menu-item" key={`${item.category}-${item.name}-${i}`}>
             <div
               className="menu-item-img"
               style={{ background: `url('${item.img}') center/cover` }}

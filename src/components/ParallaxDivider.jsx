@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function ParallaxDivider() {
   return (
     <div className="parallax-divider">
@@ -5,8 +7,8 @@ export default function ParallaxDivider() {
       <h2>
         An Experience for<br />All the Senses
       </h2>
-      <p>Open Monday – Sunday &nbsp;·&nbsp; 11:00 AM – 10:00 PM</p>
-      <a href="#reservation" className="btn-primary">Make a Reservation</a>
+      <p>Open from Tuesday through Sunday</p>
+      <Link to="/reservation" className="btn-primary">Make a Reservation</Link>
     </div>
   );
 }

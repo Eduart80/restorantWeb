@@ -1,4 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname, state } = useLocation();
+  useEffect(() => {
+    // Skip scroll-to-top when navigating home to a specific section
+    if (!state?.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+  return null;
+}
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -29,6 +41,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/reservation" element={<ReservationPage />} />

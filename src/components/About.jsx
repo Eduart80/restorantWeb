@@ -27,11 +27,11 @@ export default function About() {
           </p>
           <div className="about-stats">
             <div className="stat">
-              <div className="stat-num">12+</div>
+              <div className="stat-num">10+</div>
               <div className="stat-label">Years Open</div>
             </div>
             <div className="stat">
-              <div className="stat-num">80+</div>
+              <div className="stat-num">50+</div>
               <div className="stat-label">Menu Items</div>
             </div>
             <div className="stat">
