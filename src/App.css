@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mio Gusto — Italian Restaurant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
+ :root {
       --dark:    #1A1A1A;
       --cream:   #F9F5EF;
       --white:   #FFFFFF;
@@ -44,6 +36,7 @@
       font-size: 34px;
       color: var(--gold);
       letter-spacing: 1px;
+      text-decoration: none;
     }
     .nav-links {
       display: flex; gap: 36px; list-style: none;
@@ -58,6 +51,20 @@
       transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--gold); }
+    .nav-anchor {
+      background: none;
+      border: none;
+      color: #ccc;
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.3s;
+    }
+    .nav-anchor:hover { color: var(--gold); }
     .nav-reserve {
       background: var(--gold);
       color: var(--dark);
@@ -68,6 +75,7 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: background 0.3s;
+      border-radius: 5px;
     }
     .nav-reserve:hover { background: var(--gold2); color: #fff; }
     .nav-order {
@@ -82,8 +90,12 @@
       text-decoration: none;
       transition: all 0.3s;
       margin-right: 10px;
+      border-radius: 5px;
     }
     .nav-order:hover { background: var(--gold); color: var(--dark); }
+
+    /* Hamburger hidden on desktop */
+    .nav-hamburger { display: none; }
 
     /* ── HERO ── */
     .hero {
@@ -138,6 +150,7 @@
       text-decoration: none;
       display: inline-block;
       margin: 0 8px;
+      border-radius: 5px;
     }
     .btn-primary:hover { background: var(--gold); color: var(--dark); }
     .btn-solid {
@@ -155,6 +168,7 @@
       text-decoration: none;
       display: inline-block;
       margin: 0 8px;
+      border-radius: 5px;
     }
     .btn-solid:hover { background: var(--gold2); border-color: var(--gold2); color:#fff; }
     .hero-scroll {
@@ -491,6 +505,16 @@
     }
     .footer-col ul li a:hover { color: var(--gold); }
     .footer-col p { font-size: 13px; line-height: 1.8; }
+    .social-icon {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 22px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.3s;
+    }
+    .social-icon:hover {
+      color: #e1306c;
+    }
     .footer-bottom {
       background: #0a0a0a;
       text-align: center;
@@ -499,291 +523,398 @@
       color: rgba(255,255,255,0.2);
       letter-spacing: 1px;
     }
-  </style>
-</head>
-<body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Mio Gusto</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#catering">Catering</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="nav-order">Order Online</a>
-    <a href="#reservation" class="nav-reserve">Reserve a Table</a>
-  </nav>
+/* ── MENU PAGE ── */
+.menu-page {
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+.menu-grid-page {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.nav-link-active {
+  color: var(--gold) !important;
+}
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-sub">Welcome to</div>
-    <h1>Mio Gusto</h1>
-    <p class="hero-tagline">Authentic Italian Cuisine · The Woodlands, TX</p>
-    <div class="hero-divider">
-      <span></span>&#10022;<span></span>
-    </div>
-    <div>
-      <a href="#menu" class="btn-primary">View Menu</a>
-      <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="btn-solid">Order Online</a>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </section>
+/* ── CATERING PAGE ── */
+.catering-packages {
+  background: var(--cream);
+  padding: 80px 60px 100px;
+  text-align: center;
+}
+.catering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.catering-card {
+  background: #fff;
+  padding: 40px 30px;
+  border: 1px solid rgba(201,168,76,0.2);
+  transition: box-shadow 0.3s, transform 0.3s;
+  text-align: center;
+}
+.catering-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+.catering-card i {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.catering-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.catering-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.catering-serves {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div style="position:relative;">
-        <div class="about-img"></div>
-        <div class="about-img-border"></div>
-      </div>
-      <div class="about-text">
-        <span class="section-tag">Our Story</span>
-        <h2 class="section-title">A Taste of Italy<br/>in Every Bite</h2>
-        <div class="section-line"><span></span>&#10022;<span></span></div>
-        <p>
-          At Mio Gusto, we bring the heart of Italian cooking to your table.
-          Every dish is crafted with fresh, carefully sourced ingredients and
-          time-honored recipes passed down through generations.
-        </p>
-        <p>
-          Whether you're joining us for a romantic dinner, a family celebration,
-          or a casual lunch, we promise an experience that warms the soul and
-          delights the palate.
-        </p>
-        <div class="about-stats">
-          <div class="stat">
-            <div class="stat-num">12+</div>
-            <div class="stat-label">Years Open</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">80+</div>
-            <div class="stat-label">Menu Items</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">5★</div>
-            <div class="stat-label">Rating</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* ── CONTACT PAGE ── */
+.contact-section {
+  background: var(--dark);
+  padding: 80px 60px 100px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.contact-info-item i {
+  color: var(--gold);
+  font-size: 18px;
+  margin-top: 2px;
+  width: 20px;
+  flex-shrink: 0;
+}
+.contact-info-item p,
+.contact-info-item a {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-info-item a:hover { color: var(--gold); }
+.contact-hours { margin-top: 8px; }
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+.hours-row.closed { color: rgba(255,255,255,0.25); }
+.contact-form-wrap {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 48px 40px;
+}
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 28px;
+}
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: #fff;
+  padding: 14px 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+.contact-form input:focus,
+.contact-form textarea:focus { border-color: var(--gold); }
 
-  <!-- SPECIALS -->
-  <section class="specials" id="specials" style="padding:80px 0;">
-    <span class="section-tag">Chef's Selection</span>
-    <h2 class="section-title">Today's Specials</h2>
-    <div class="section-line"><span></span>&#10022;<span></span></div>
-    <p class="section-desc">Handpicked by our chef every day using the freshest seasonal ingredients.</p>
-    <div class="specials-grid">
-      <div class="special-card">
-        <div class="card-img" style="background:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80') center/cover;"></div>
-        <div class="card-overlay">
-          <div class="card-tag">Starter</div>
-          <div class="card-name">Burrata & Prosciutto</div>
-          <div class="card-desc">Fresh burrata, aged prosciutto, heirloom tomatoes, basil oil</div>
-          <div class="card-price">$16</div>
-        </div>
-      </div>
-      <div class="special-card">
-        <div class="card-img" style="background:url('https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80') center/cover;"></div>
-        <div class="card-overlay">
-          <div class="card-tag">Main Course</div>
-          <div class="card-name">Tagliatelle al Ragù</div>
-          <div class="card-desc">Hand-rolled pasta, slow-cooked Bolognese, Parmigiano Reggiano</div>
-          <div class="card-price">$24</div>
-        </div>
-      </div>
-      <div class="special-card">
-        <div class="card-img" style="background:url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80') center/cover;"></div>
-        <div class="card-overlay">
-          <div class="card-tag">Dessert</div>
-          <div class="card-name">Classic Tiramisù</div>
-          <div class="card-desc">Savoiardi, mascarpone cream, espresso, dusted with cocoa</div>
-          <div class="card-price">$11</div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* ── RESERVATION PAGE ── */
+.res-page-hero {
+  background: #1a1a1a;
+  padding: 160px 40px 80px;
+  text-align: center;
+}
+.res-page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  color: #fff;
+  margin: 8px 0 20px;
+}
+.res-page-hero p {
+  color: rgba(255,255,255,0.55);
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+.reservation-page {
+  padding: 80px 40px 100px;
+}
+.res-form-full {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.res-form-full textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: #fff;
+  padding: 14px 16px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  border-radius: 2px;
+  resize: vertical;
+}
+.res-form-full textarea::placeholder { color: rgba(255,255,255,0.3); }
+.res-form-full textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.res-success {
+  text-align: center;
+  padding: 80px 20px;
+  color: #fff;
+}
+.res-success i {
+  font-size: 56px;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.res-success h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.res-success p {
+  color: rgba(255,255,255,0.5);
+  font-size: 15px;
+}
 
-  <!-- MENU -->
-  <section class="menu-strip" id="menu">
-    <span class="section-tag">What We Serve</span>
-    <h2 class="section-title">Our Menu</h2>
-    <div class="section-line"><span></span>&#10022;<span></span></div>
-    <div class="menu-categories">
-      <button class="cat-btn active">All</button>
-      <button class="cat-btn">Starters</button>
-      <button class="cat-btn">Pasta</button>
-      <button class="cat-btn">Pizza</button>
-      <button class="cat-btn">Mains</button>
-      <button class="cat-btn">Desserts</button>
-      <button class="cat-btn">Drinks</button>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1541014741259-de529411b96a?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Bruschetta al Pomodoro</div>
-            <div class="menu-item-price">$12</div>
-          </div>
-          <div class="menu-item-desc">Grilled bread, fresh tomatoes, garlic, basil, extra virgin olive oil</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Margherita Pizza</div>
-            <div class="menu-item-price">$18</div>
-          </div>
-          <div class="menu-item-desc">San Marzano tomato, fior di latte mozzarella, fresh basil</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Risotto ai Funghi</div>
-            <div class="menu-item-price">$22</div>
-          </div>
-          <div class="menu-item-desc">Arborio rice, porcini mushrooms, white wine, Parmigiano</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1484980859778-1eb03fc5a9e3?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Salmone alla Griglia</div>
-            <div class="menu-item-price">$28</div>
-          </div>
-          <div class="menu-item-desc">Grilled salmon, capers, lemon butter sauce, seasonal greens</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Tiramisù Classico</div>
-            <div class="menu-item-price">$11</div>
-          </div>
-          <div class="menu-item-desc">Mascarpone, savoiardi, espresso, cocoa powder</div>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item-img" style="background:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&q=80') center/cover;"></div>
-        <div class="menu-item-info">
-          <div class="menu-item-top">
-            <div class="menu-item-name">Panna Cotta</div>
-            <div class="menu-item-price">$9</div>
-          </div>
-          <div class="menu-item-desc">Vanilla cream, mixed berry coulis, fresh mint</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:50px;">
-      <a href="https://www.clover.com/online-ordering/mio-gusto-frisco" target="_blank" class="btn-solid">Order Online</a>
-    </div>
-  </section>
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET  (≤ 1024px)
+═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* Nav */
+  nav { padding: 18px 30px; }
+  .nav-links { gap: 20px; }
 
-  <!-- PARALLAX DIVIDER -->
-  <div class="parallax-divider">
-    <span class="section-tag">Come & Dine With Us</span>
-    <h2>An Experience for<br/>All the Senses</h2>
-    <p>Open Monday – Sunday &nbsp;·&nbsp; 11:00 AM – 10:00 PM</p>
-    <a href="#reservation" class="btn-primary">Make a Reservation</a>
-  </div>
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 50px; }
+  .about-img { height: 340px; }
+  .about-text .section-tag,
+  .about-text .section-title,
+  .about-text .section-line { text-align: center; justify-content: center; }
 
-  <!-- EVENTS -->
-  <section class="events" id="events">
-    <span class="section-tag">What's On</span>
-    <h2 class="section-title">Upcoming Events</h2>
-    <div class="section-line"><span></span>&#10022;<span></span></div>
-    <p class="section-desc">Join us for special evenings, tastings, and celebrations throughout the year.</p>
-    <div class="events-grid">
-      <div class="event-card">
-        <div class="event-img" style="background:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80') center/cover;"></div>
-        <div class="event-body">
-          <div class="event-date">Saturday, June 14 · 7:00 PM</div>
-          <div class="event-name">Wine & Pasta Night</div>
-          <div class="event-desc">A curated evening pairing handmade pastas with our finest Italian wines. Limited seats available.</div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img" style="background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80') center/cover;"></div>
-        <div class="event-body">
-          <div class="event-date">Friday, June 20 · 6:30 PM</div>
-          <div class="event-name">Chef's Table Experience</div>
-          <div class="event-desc">An intimate 7-course tasting menu prepared tableside by our executive chef.</div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img" style="background:url('https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80') center/cover;"></div>
-        <div class="event-body">
-          <div class="event-date">Sunday, June 22 · 12:00 PM</div>
-          <div class="event-name">Sunday Family Brunch</div>
-          <div class="event-desc">An Italian-style brunch with live music, bottomless mimosas, and a special kids menu.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  /* Specials */
+  .specials-grid { grid-template-columns: repeat(2, 1fr); }
 
-  <!-- RESERVATION -->
-  <section class="reservation" id="reservation">
-    <span class="section-tag">Book Your Table</span>
-    <h2 class="section-title">Make a Reservation</h2>
-    <div class="section-line"><span></span>&#10022;<span></span></div>
-    <p class="section-desc">Reserve your table online and we'll have everything ready for your arrival.</p>
-    <div class="res-form">
-      <input type="text" placeholder="Your Name"/>
-      <input type="email" placeholder="Email Address"/>
-      <input type="tel" placeholder="Phone Number"/>
-      <input type="date"/>
-      <input type="time"/>
-      <select>
-        <option value="">Guests</option>
-        <option>1 Guest</option>
-        <option>2 Guests</option>
-        <option>3 Guests</option>
-        <option>4 Guests</option>
-        <option>5+ Guests</option>
-      </select>
-      <button class="btn-solid" style="border:none;cursor:pointer;">Reserve Now</button>
-    </div>
-  </section>
+  /* Menu */
+  .menu-grid { grid-template-columns: 1fr; max-width: 600px; }
 
-  <!-- FOOTER -->
-  <footer id="contact">
-    <div class="footer-brand">
-      <span class="nav-logo">Mio Gusto</span>
-      <p>Authentic Italian cuisine crafted<br/>with passion and fresh ingredients.<br/>The Woodlands, TX</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#menu">Our Menu</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#reservation">Reservations</a></li>
-        <li><a href="#">Catering</a></li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Hours</h4>
-      <p>Mon – Thu &nbsp; 11am – 9pm<br/>Fri – Sat &nbsp;&nbsp;&nbsp; 11am – 10pm<br/>Sunday &nbsp;&nbsp;&nbsp;&nbsp; 12pm – 8pm</p>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>169 S Hollylaurel<br/>The Woodlands, TX<br/><br/>+1 (000) 000-0000<br/>info@miogusto.com</p>
-    </div>
-  </footer>
-  <div class="footer-bottom">
-    &copy; 2026 Mio Gusto Restaurant &nbsp;·&nbsp; Website by Zedy3d.com
-  </div>
+  /* Events */
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+  .catering-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; gap: 50px; }
 
-</body>
-</html>
+  /* Footer */
+  footer { grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 40px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — MOBILE  (≤ 768px)
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav — hamburger-style collapse */
+  nav {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .nav-links { display: none; }
+  .nav-order { display: none; }
+  .nav-reserve { display: none; }
+
+  /* Hamburger button */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .nav-mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(26,26,26,0.98);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 24px;
+    gap: 0;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    z-index: 999;
+  }
+  .nav-mobile-menu a,
+  .nav-mobile-menu .nav-anchor,
+  .nav-mobile-menu .nav-reserve {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: color 0.2s;
+    display: block;
+  }
+  .nav-mobile-menu a:hover { color: var(--gold); }
+  .nav-mobile-menu .nav-reserve {
+    margin-top: 16px;
+    background: var(--gold);
+    color: var(--dark);
+    text-align: center;
+    padding: 12px 0;
+    border: none;
+    font-weight: 600;
+  }
+
+  /* Hero */
+  .hero h1 { font-size: 52px; letter-spacing: 3px; }
+  .hero-sub { font-size: 28px; }
+  .hero-tagline { font-size: 10px; letter-spacing: 3px; }
+  .btn-primary, .btn-solid { padding: 12px 36px; font-size: 11px; border-radius: 10px; white-space: nowrap; }
+  .hero > div { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; padding: 0 16px; width: 100%; }
+  .hero > div .btn-primary,
+  .hero > div .btn-solid { margin: 0; flex: 0 1 auto; min-width: 150px; text-align: center; }
+
+  /* Sections */
+  section { padding: 70px 24px; }
+  .section-title { font-size: 30px; }
+
+  /* About */
+  .about-grid { gap: 36px; }
+  .about-img { height: 280px; }
+  .about-stats { gap: 24px; justify-content: center; }
+
+  /* Specials */
+  .specials-grid { grid-template-columns: 1fr; }
+  .special-card { height: 320px; }
+
+  /* Menu strip */
+  .menu-strip { padding: 60px 20px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-item { padding: 18px 12px; }
+
+  /* Menu page grid */
+  .menu-grid-page { grid-template-columns: 1fr; }
+
+  /* Catering page */
+  .catering-packages { padding: 60px 20px 80px; }
+  .catering-grid { grid-template-columns: 1fr; }
+
+  /* Contact page */
+  .contact-section { padding: 60px 20px 80px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-form-wrap { padding: 32px 20px; }
+
+  /* Parallax */
+  .parallax-divider { height: auto; padding: 70px 24px; }
+  .parallax-divider h2 { font-size: 30px; }
+
+  /* Events */
+  .events-grid { grid-template-columns: 1fr; }
+
+  /* Reservation page form */
+  .res-form-full { grid-template-columns: 1fr; }
+  .res-form-full textarea { grid-column: 1; }
+  .res-form-full button { grid-column: 1; }
+  .reservation-page { padding: 60px 20px 80px; }
+  .res-page-hero { padding: 120px 24px 60px; }
+
+  /* Footer */
+  footer {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 50px 24px;
+    text-align: center;
+  }
+  .footer-brand .nav-logo { font-size: 36px; }
+  .footer-col ul li a,
+  .footer-col p { font-size: 14px; }
+
+  /* Footer-bottom */
+  .footer-bottom { font-size: 11px; padding: 16px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE  (≤ 480px)
+═══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 38px; }
+  .hero-sub { font-size: 18px; }
+  .section-title { font-size: 26px; }
+  .parallax-divider h2 { font-size: 24px; }
+  .about-stats { flex-direction: row; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .stat-num { font-size: 28px; }
+  .btn-primary, .btn-solid { display: block; margin: 6px auto; width: 80%; text-align: center; }
+}

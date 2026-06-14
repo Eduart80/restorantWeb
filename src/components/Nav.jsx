@@ -1,0 +1,104 @@
+import { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
+export default function Nav() {
+  const [open, setOpen] = useState(false);
+  const navRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function close() { setOpen(false); }
+
+  // Close when clicking outside the nav
+  useEffect(() => {
+    if (!open) return;
+    function handleClickOutside(e) {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [open]);
+
+  // After navigating to home, scroll to pending hash
+  const pendingHash = useRef(null);
+  useEffect(() => {
+    if (pendingHash.current && location.pathname === '/') {
+      const el = document.getElementById(pendingHash.current);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      pendingHash.current = null;
+    }
+  }, [location]);
+
+  function scrollTo(id) {
+    close();
+    if (location.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      pendingHash.current = id;
+      navigate('/');
+    }
+  }
+
+  return (
+    <nav ref={navRef}>
+      <Link to="/" className="nav-logo" onClick={close}>Mio Gusto</Link>
+
+      {/* Desktop links */}
+      <ul className="nav-links">
+        <li><button className="nav-anchor" onClick={() => scrollTo('about')}>About</button></li>
+        <li><Link to="/menu">Menu</Link></li>
+        <li><button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button></li>
+        <li><Link to="/catering" onClick={close}>Catering</Link></li>
+        <li><Link to="/contact" onClick={close}>Contact</Link></li>
+      </ul>
+
+      <a
+        href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="nav-order"
+      >
+        Order Online
+      </a>
+      <Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
+
+      {/* Hamburger button — mobile only */}
+      <button
+        className={`nav-hamburger${open ? ' open' : ''}`}
+        onClick={() => setOpen(!open)}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Mobile drawer */}
+      {open && (
+        <div className="nav-mobile-menu">
+          <button className="nav-anchor" onClick={() => scrollTo('about')}>About</button>
+          <Link to="/menu" onClick={close}>Menu</Link>
+          <button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button>
+          <Link to="/catering" onClick={close}>Catering</Link>
+          <Link to="/contact" onClick={close}>Contact</Link>
+          <a
+            href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
+          >
+            Order Online
+          </a>
+          <Link to="/reservation" className="nav-reserve" onClick={close}>Reserve a Table</Link>
+        </div>
+      )}
+    </nav>
+  );
+}
