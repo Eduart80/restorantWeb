@@ -68,3 +68,65 @@ export const menuItems = [
 ];
 
 export const categories = ['All', 'Antipasta', 'Soups & Salads', 'Pasta', 'Pollo', 'Frutti di Mare', 'Pizza', 'Steak', 'Kids', 'Sides'];
+
+// ── LUNCH MENU ───────────────────────────────────────────────────────────────
+export const lunchMenuItems = [
+  // ── ZUPPA & INSALATA ─────────────────────────────────────────────────────
+  { category: 'Zuppa & Insalata', img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80', name: 'Zuppa di Giorno',             price: '$8.95',  desc: "Chef's choice soup" },
+  { category: 'Zuppa & Insalata', img: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&q=80', name: 'Chicken Caesar Salad',        price: '$14.95', desc: 'Romaine, breadcrumbs, parmigiano, Caesar dressing' },
+  { category: 'Zuppa & Insalata', img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', name: 'Mio Gusto Salad with Chicken', price: '$14.95', desc: 'Mixed greens, cherry tomatoes, asparagus, roasted peppers, sliced almonds, balsamic dressing' },
+
+  // ── POLLO ─────────────────────────────────────────────────────────────────
+  { category: 'Pollo', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=80', name: 'Parmigiana',                          price: '$17.95', desc: 'Pan-fried chicken, tomato sauce, mozzarella cheese' },
+  { category: 'Pollo', img: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=80', name: 'Marsala',                             price: '$17.95', desc: 'Chicken, mushrooms, Marsala wine sauce' },
+  { category: 'Pollo', img: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&q=80', name: 'Piccata',                             price: '$17.95', desc: 'Chicken, capers, white wine lemon sauce' },
+
+  // ── PASTA ─────────────────────────────────────────────────────────────────
+  { category: 'Pasta', img: 'https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&q=80', name: 'Spaghetti Bolognese',                 price: '$14.95', desc: 'Classic Bolognese meat sauce over spaghetti' },
+  { category: 'Pasta', img: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&q=80', name: 'Spaghetti with Meatballs',            price: '$14.95', desc: 'House-made beef meatballs served with marinara sauce' },
+  { category: 'Pasta', img: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=80', name: 'Linguine Aglio e Olio',              price: '$14.95', desc: 'Garlic, extra virgin olive oil, cherry tomatoes, and fresh basil' },
+
+  // ── PANINI & PIZZA ────────────────────────────────────────────────────────
+  { category: 'Panini & Pizza', img: 'https://images.unsplash.com/photo-1528736235302-52922df5c122?w=400&q=80', name: 'Mio Gusto Sandwich',         price: '$14.95', desc: 'Prosciutto, roasted peppers, arugula, mozzarella, lemon-olive oil' },
+  { category: 'Panini & Pizza', img: 'https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=400&q=80', name: 'Chicken Milanese Sandwich',     price: '$15.95', desc: 'Pan-fried breaded chicken, arugula, roasted peppers, parmigiana, balsamic glaze' },
+  { category: 'Panini & Pizza', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', name: '12" Cheese Pizza',           price: '$10.99', desc: 'Toppings +$1.50 each: Sausage, Pepperoni, Canadian Bacon, Hamburger, Mushroom, Peppers, Olives, Onions, Spinach, Tomatoes' },
+];
+
+export const lunchCategories = ['All', 'Zuppa & Insalata', 'Pollo', 'Pasta', 'Panini & Pizza'];
+
+// ── DRINKS & DESSERT ─────────────────────────────────────────────────────────
+export const drinksDessertItems = [
+  // ── COFFEE ───────────────────────────────────────────────────────────────
+  { category: 'Coffee', img: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&q=80', name: 'Single Espresso',       price: '$3.95',  desc: 'Lavazza single shot espresso' },
+  { category: 'Coffee', img: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=400&q=80', name: 'Double Espresso',       price: '$4.95',  desc: 'Lavazza double shot espresso' },
+  { category: 'Coffee', img: 'https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&q=80', name: 'Cappuccino',            price: '$6.95',  desc: 'Lavazza espresso with steamed milk foam' },
+  { category: 'Coffee', img: 'https://images.unsplash.com/photo-1561047029-3000c68339ca?w=400&q=80', name: 'Latte',                 price: '$6.95',  desc: 'Lavazza espresso with steamed milk' },
+  { category: 'Coffee', img: 'https://images.unsplash.com/photo-1551030173-122aabc4489c?w=400&q=80', name: 'Americano',             price: '$4.95',  desc: 'Lavazza espresso with hot water' },
+
+  // ── SOFT DRINKS ───────────────────────────────────────────────────────────
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Coca-Cola',      price: '$3.95',  desc: 'Classic Coca-Cola' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Diet Coke',      price: '$3.95',  desc: 'Diet Coca-Cola' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Sprite',         price: '$3.95',  desc: 'Lemon-lime sparkling soft drink' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Fanta',          price: '$3.95',  desc: 'Orange sparkling soft drink' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&q=80', name: 'Lemonade',       price: '$3.95',  desc: 'Freshly squeezed lemonade' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Dr Pepper',      price: '$3.95',  desc: 'Dr Pepper soft drink' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=80', name: 'Diet Dr Pepper', price: '$3.95',  desc: 'Diet Dr Pepper soft drink' },
+  { category: 'Soft Drinks', img: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80', name: 'Iced Tea',         price: '$3.95',  desc: 'House-brewed iced tea' },
+
+  // ── AFTER-DINNER DRINKS ───────────────────────────────────────────────────
+  { category: 'After-Dinner Drinks', img: 'https://images.unsplash.com/photo-1551751299-1b51cab2694c?w=400&q=80', name: 'Limoncello',  price: '$9.95',  desc: 'Classic Italian lemon liqueur' },
+  { category: 'After-Dinner Drinks', img: 'https://images.unsplash.com/photo-1551751299-1b51cab2694c?w=400&q=80', name: 'Sambuca',     price: '$9.95',  desc: 'Italian anise-flavored liqueur' },
+  { category: 'After-Dinner Drinks', img: 'https://images.unsplash.com/photo-1551751299-1b51cab2694c?w=400&q=80', name: 'Baileys',     price: '$9.95',  desc: 'Irish cream liqueur' },
+
+  // ── WATER & SPARKLING ─────────────────────────────────────────────────────
+  { category: 'Water & Sparkling', img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80', name: 'San Pellegrino', price: '$6.95', desc: 'Italian sparkling natural mineral water' },
+  { category: 'Water & Sparkling', img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80', name: 'Aqua Panna',    price: '$6.95', desc: 'Italian still natural mineral water' },
+
+  // ── DESSERTS ──────────────────────────────────────────────────────────────
+  { category: 'Desserts', img: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&q=80', name: 'Homemade Tiramisu',    price: '$10.95', desc: 'Classic Italian tiramisu, made in-house' },
+  { category: 'Desserts', img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=80', name: 'Homemade Cheesecake',  price: '$10.95', desc: 'House-made creamy cheesecake' },
+  { category: 'Desserts', img: 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=400&q=80', name: 'Chocolate Mousse',     price: '$9.95',  desc: 'Rich and airy dark chocolate mousse' },
+  { category: 'Desserts', img: 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&q=80', name: 'Cannoli',              price: '$7.95',  desc: 'Crispy shell filled with sweet ricotta cream' },
+];
+
+export const drinksDessertCategories = ['All', 'Coffee', 'Soft Drinks', 'After-Dinner Drinks', 'Water & Sparkling', 'Desserts'];

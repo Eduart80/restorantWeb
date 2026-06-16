@@ -531,11 +531,95 @@
   padding-top: 60px;
   padding-bottom: 100px;
 }
+.menu-strip--alt {
+  background: var(--cream);
+}
+/* ── SCROLL TO TOP BUTTON ── */
+.scroll-up-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+.scroll-up-btn:hover {
+  background: var(--gold2);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.menu-jump-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 28px 20px;
+  background: var(--dark);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.menu-jump-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background 0.25s, color 0.25s;
+}
+.menu-jump-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+.menu-section-note {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
 .menu-grid-page {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .nav-link-active {
   color: var(--gold) !important;
+}
+
+/* ── MENU IMAGE SECTIONS (Lunch / Drinks & Dessert) ── */
+.menu-image-section {
+  background: var(--cream);
+  padding: 80px 60px 100px;
+  text-align: center;
+}
+.menu-image-section--alt {
+  background: var(--white);
+}
+.menu-image-wrap {
+  margin: 40px auto 0;
+  max-width: 860px;
+}
+.menu-image-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  display: block;
 }
 
 /* ── CATERING PAGE ── */
@@ -835,6 +919,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: color 0.2s;
     display: block;
+    text-align: center;
   }
   .nav-mobile-menu a:hover { color: var(--gold); }
   .nav-mobile-menu .nav-reserve {
@@ -876,6 +961,9 @@
 
   /* Menu page grid */
   .menu-grid-page { grid-template-columns: 1fr; }
+
+  /* Menu image sections */
+  .menu-image-section { padding: 60px 20px 80px; }
 
   /* Catering page */
   .catering-packages { padding: 60px 20px 80px; }

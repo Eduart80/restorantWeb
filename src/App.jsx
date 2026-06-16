@@ -1,5 +1,24 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+function ScrollUpButton() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    function onScroll() { setVisible(window.scrollY > 300); }
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  if (!visible) return null;
+  return (
+    <button
+      className="scroll-up-btn"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+    >
+      &#8679;
+    </button>
+  );
+}
 
 function ScrollToTop() {
   const { pathname, state } = useLocation();
@@ -42,6 +61,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollUpButton />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/reservation" element={<ReservationPage />} />

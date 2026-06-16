@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import Nav from '../components/Nav';
 
 const defaultForm = {
   name: '',
@@ -28,26 +29,7 @@ export default function ReservationPage() {
 
   return (
     <>
-      {/* Page Nav */}
-      <nav>
-        <Link to="/" className="nav-logo">Mio Gusto</Link>
-        <ul className="nav-links">
-          <li><Link to="/#about">About</Link></li>
-          <li><Link to="/#menu">Menu</Link></li>
-          <li><Link to="/#events">Events</Link></li>
-          <li><Link to="/#catering">Catering</Link></li>
-          <li><Link to="/#contact">Contact</Link></li>
-        </ul>
-        <a
-          href="https://www.clover.com/online-ordering/mio-gusto-frisco"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-order"
-        >
-          Order Online
-        </a>
-        <Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
-      </nav>
+      <Nav />
 
       {/* Reservation Hero Banner */}
       <div className="res-page-hero">

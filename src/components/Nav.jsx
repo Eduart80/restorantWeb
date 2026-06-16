@@ -38,6 +38,8 @@ export default function Nav() {
     }
   }, [location]);
 
+  const isMenuPage = location.pathname === '/menu';
+
   function scrollTo(id) {
     close();
     if (location.pathname === '/') {
@@ -61,7 +63,17 @@ export default function Nav() {
         <li><Link to="/contact" onClick={close}>Contact</Link></li>
       </ul>
 
-<Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
+      {isMenuPage && (
+        <a
+          href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-order"
+        >
+          Order Online
+        </a>
+      )}
+      <Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
 
       {/* Hamburger button — mobile only */}
       <button
@@ -82,7 +94,17 @@ export default function Nav() {
           <button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button>
           <Link to="/catering" onClick={close}>Catering</Link>
           <Link to="/contact" onClick={close}>Contact</Link>
-<Link to="/reservation" className="nav-reserve" onClick={close}>Reserve a Table</Link>
+          {isMenuPage && (
+            <a
+              href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={close}
+            >
+              Order Online
+            </a>
+          )}
+          <Link to="/reservation" className="nav-reserve" onClick={close}>Reserve a Table</Link>
         </div>
       )}
     </nav>
