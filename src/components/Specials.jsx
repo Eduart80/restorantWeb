@@ -20,6 +20,13 @@ const specials = [
     desc: 'Savoiardi, mascarpone cream, espresso, dusted with cocoa',
     price: '$11',
   },
+  {
+    img: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80',
+    tag: 'Drink',
+    name: 'Aperol Spritz',
+    desc: 'Aperol, Prosecco, soda water, fresh orange slice',
+    price: '$13',
+  },
 ];
 
 export default function Specials() {

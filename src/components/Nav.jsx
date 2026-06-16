@@ -61,15 +61,7 @@ export default function Nav() {
         <li><Link to="/contact" onClick={close}>Contact</Link></li>
       </ul>
 
-      <a
-        href="https://www.clover.com/online-ordering/mio-gusto-frisco"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="nav-order"
-      >
-        Order Online
-      </a>
-      <Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
+<Link to="/reservation" className="nav-reserve">Reserve a Table</Link>
 
       {/* Hamburger button — mobile only */}
       <button
@@ -90,15 +82,7 @@ export default function Nav() {
           <button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button>
           <Link to="/catering" onClick={close}>Catering</Link>
           <Link to="/contact" onClick={close}>Contact</Link>
-          <a
-            href="https://www.clover.com/online-ordering/mio-gusto-frisco"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={close}
-          >
-            Order Online
-          </a>
-          <Link to="/reservation" className="nav-reserve" onClick={close}>Reserve a Table</Link>
+<Link to="/reservation" className="nav-reserve" onClick={close}>Reserve a Table</Link>
         </div>
       )}
     </nav>

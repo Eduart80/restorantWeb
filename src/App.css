@@ -76,6 +76,7 @@
       text-decoration: none;
       transition: background 0.3s;
       border-radius: 5px;
+      white-space: nowrap;
     }
     .nav-reserve:hover { background: var(--gold2); color: #fff; }
     .nav-order {
@@ -91,6 +92,7 @@
       transition: all 0.3s;
       margin-right: 10px;
       border-radius: 5px;
+      white-space: nowrap;
     }
     .nav-order:hover { background: var(--gold); color: var(--dark); }
 
@@ -283,9 +285,9 @@
     .specials .section-line { color: var(--gold); }
     .specials-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
     }
     .special-card {
@@ -758,6 +760,13 @@
 
   /* Footer */
   footer { grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 40px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET NARROW  (≤ 860px)
+═══════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .nav-order { display: none; }
 }
 
 /* ═══════════════════════════════════════════
