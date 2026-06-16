@@ -8,14 +8,14 @@ export const menuItems = [
   { category: 'Antipasta', img: 'https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&q=80', name: 'Asparagi alla Oreganata',    price: '$13.95', desc: 'Asparagus baked in white wine–lemon sauce with breadcrumbs and melted mozzarella' },
   { category: 'Antipasta', img: 'https://images.unsplash.com/photo-1599021456807-25db0f974333?w=400&q=80', name: 'Polpo alla Griglia',        price: '$20.95', desc: 'Grilled octopus, arugula, cherry tomatoes' },
   { category: 'Antipasta', img: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&q=80', name: 'Funghi Ripieni',            price: '$16.95', desc: 'Stuffed mushrooms in creamy lobster sauce' },
-  { category: 'Antipasta', img: 'https://images.unsplash.com/photo-1571197119738-dc4ab5e661e2?w=400&q=80', name: 'Mozzarella Fritta',         price: '$11.95', desc: 'Fried mozzarella sticks' },
+  { category: 'Antipasta', img: 'https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&q=80', name: 'Mozzarella Fritta',         price: '$11.95', desc: 'Fried mozzarella sticks' },
 
   // ── SOUPS & SALADS ───────────────────────────────────────────────────────────
   { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80', name: 'Zuppa di Giorno',        price: '$9.95',  desc: "Chef's choice soup" },
   { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', name: 'Mio Gusto Salad',     price: '$11.95', desc: 'Mixed greens, cherry tomatoes, asparagus, roasted peppers, almonds, balsamic dressing' },
   { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80', name: 'Rucola',               price: '$11.95', desc: 'Arugula, cherry tomatoes, lemon dressing, balsamic glaze, shaved parmigiano' },
   { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&q=80', name: 'Caesar',                 price: '$11.95', desc: 'Romaine, breadcrumbs, parmigiano, Caesar dressing' },
-  { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1626200926886-e91c2f270f3a?w=400&q=80', name: 'Burrata',              price: '$15.95', desc: 'Mixed greens, tomatoes, prosciutto, burrata, balsamic drizzle' },
+  { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', name: 'Burrata',              price: '$15.95', desc: 'Mixed greens, tomatoes, prosciutto, burrata, balsamic drizzle' },
   { category: 'Soups & Salads', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', name: 'Caprese',              price: '$14.95', desc: 'Buffalo mozzarella, tomatoes, roasted peppers, olives, basil pesto' },
 
   // ── PASTA ────────────────────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ export const menuItems = [
   { category: 'Pasta', img: 'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=400&q=80', name: 'Penne alla Vodka',              price: '$17.95', desc: 'Penne pasta, pink vodka sauce, basil, pancetta' },
   { category: 'Pasta', img: 'https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=400&q=80', name: 'Tortellini al Pesto',         price: '$17.95', desc: 'Cheese tortellini, cherry tomatoes, creamy pesto sauce (add chicken +$6)' },
   { category: 'Pasta', img: 'https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&q=80', name: 'Pasta Primavera',             price: '$17.95', desc: 'Broccoli, zucchini, peppers, asparagus, mushrooms with garlic and olive oil' },
-  { category: 'Pasta', img: 'https://images.unsplash.com/photo-1551183053-bf91798d702f?w=400&q=80', name: 'Spaghetti',                     price: '$13.95–$17.95', desc: 'Choice of marinara, meatballs, or Bolognese' },
+  { category: 'Pasta', img: 'https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=400&q=80', name: 'Spaghetti',                     price: '$13.95–$17.95', desc: 'Choice of marinara, meatballs, or Bolognese' },
 
   // ── POLLO ────────────────────────────────────────────────────────────────────
   { category: 'Pollo', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=80', name: 'Pollo Parmigiana',            price: '$22.95', desc: 'Pan-fried chicken, tomato sauce, mozzarella cheese' },
@@ -37,10 +37,10 @@ export const menuItems = [
   { category: 'Pollo', img: 'https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=400&q=80', name: 'Pollo Livornese',             price: '$22.95', desc: 'Chicken, olives, capers, onions, tomato sauce' },
 
   // ── FRUTTI DI MARE ───────────────────────────────────────────────────────────
-  { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1484980859778-1eb03fc5a9e3?w=400&q=80', name: 'Salmone alla Champagne', price: '$27.95', desc: 'Grilled salmon, champagne cream sauce, roasted potatoes, mixed vegetables' },
+  { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80', name: 'Salmone alla Champagne', price: '$27.95', desc: 'Grilled salmon, champagne cream sauce, roasted potatoes, mixed vegetables' },
   { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80', name: 'Shrimp Scampi or Fra Diavolo', price: '$23.95', desc: 'Shrimp over linguini and fresh baby spinach, Scampi or spicy Fra Diavolo' },
   { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1534482421-64566f976cfa?w=400&q=80', name: 'Misto di Mare',           price: '$31.95', desc: 'Mussels, clams, calamari, shrimp over linguini; choice of marinara or Fra Diavolo sauce' },
-  { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1558030089-8e8b5ffe0e3a?w=400&q=80', name: 'Branzino e Gamberi',      price: '$34.95', desc: 'Branzino filet, shrimp, mustard–lemon–caper sauce, sautéed spinach' },
+  { category: 'Frutti di Mare', img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80', name: 'Branzino e Gamberi',      price: '$34.95', desc: 'Branzino filet, shrimp, mustard–lemon–caper sauce, sautéed spinach' },
 
   // ── PIZZA (12") ──────────────────────────────────────────────────────────────
   { category: 'Pizza', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', name: 'Margherita',                  price: '$18.95', desc: 'Buffalo mozzarella, tomato, basil' },
@@ -57,12 +57,12 @@ export const menuItems = [
   { category: 'Kids', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', name: '10" Pizza',                   price: '$9.95',  desc: 'Cheese or pepperoni' },
   { category: 'Kids', img: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&q=80', name: 'Fettuccine Alfredo',             price: '$9.95',  desc: 'Classic kids Fettuccine Alfredo' },
   { category: 'Kids', img: 'https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=400&q=80', name: 'Tortellini',                  price: '$9.95',  desc: 'Choice of Alfredo or Marinara' },
-  { category: 'Kids', img: 'https://images.unsplash.com/photo-1551183053-bf91798d702f?w=400&q=80', name: 'Spaghetti',                     price: '$9.95',  desc: 'Choice of butter sauce, meatballs, or meat sauce' },
+  { category: 'Kids', img: 'https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=400&q=80', name: 'Spaghetti',                     price: '$9.95',  desc: 'Choice of butter sauce, meatballs, or meat sauce' },
 
   // ── SIDES ─────────────────────────────────────────────────────────────────────
   { category: 'Sides', img: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=80', name: 'Side of Spaghetti or Linguini', price: '$8.95', desc: 'Choice of spaghetti or linguini' },
   { category: 'Sides', img: 'https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=400&q=80', name: 'Side of Roasted Potatoes',   price: '$8.95',  desc: 'Seasoned roasted potatoes' },
-  { category: 'Sides', img: 'https://images.unsplash.com/photo-1616789077476-4b7eb6f86e79?w=400&q=80', name: 'Sautéed Spinach',            price: '$8.95',  desc: 'Sautéed fresh spinach' },
+  { category: 'Sides', img: 'https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=400&q=80', name: 'Sautéed Spinach',            price: '$8.95',  desc: 'Sautéed fresh spinach' },
   { category: 'Sides', img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', name: 'Side of Mixed Vegetables',   price: '$8.95',  desc: 'Daily mixed vegetables' },
   { category: 'Sides', img: 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=400&q=80', name: 'Side of Meatball Tomato Sauce', price: '$8.95', desc: 'Meatball tomato sauce' },
 ];
