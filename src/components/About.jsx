@@ -25,7 +25,7 @@ export default function About() {
             Join us for a memorable dining experience filled with authentic flavors and
             heartfelt hospitality.
           </p>
-          <div className="about-stats">
+          {/* <div className="about-stats">
             <div className="stat">
               <div className="stat-num">10+</div>
               <div className="stat-label">Years Open</div>
@@ -38,7 +38,8 @@ export default function About() {
               <div className="stat-num">4.8★</div>
               <div className="stat-label">Rating</div>
             </div>
-          </div>
+          </div> */}
+          <br />
         </div>
       </div>
     </section>
