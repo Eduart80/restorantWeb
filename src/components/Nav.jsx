@@ -67,7 +67,6 @@ export default function Nav() {
         <li><button className="nav-anchor" onClick={() => scrollTo('about')}>About</button></li>
         <li><Link to="/menu">Menu</Link></li>
         <li><button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button></li>
-        <li><Link to="/reservation" onClick={close}>Reservation</Link></li>
         <li><Link to="/catering" onClick={close}>Catering</Link></li>
       </ul>
       
@@ -101,7 +100,6 @@ export default function Nav() {
           <button className="nav-anchor" onClick={() => scrollTo('about')}>About</button>
           <Link to="/menu" onClick={close}>Menu</Link>
           <button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button>
-          <Link to="/reservation" onClick={close}>Reservation</Link>
           <Link to="/catering" onClick={close}>Catering</Link>
           {isMenuPage && (
             <a

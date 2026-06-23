@@ -8,7 +8,7 @@ export default function Hero() {
         <span></span>&#10022;<span></span>
       </div>
       <div>
-        <a href="#menu" className="btn-primary">View Menu</a>
+        <a href="/menu" className="btn-primary">View Menu</a>
         <a
           href="https://www.clover.com/online-ordering/mio-gusto-frisco"
           target="_blank"
