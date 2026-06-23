@@ -25,6 +25,14 @@ export default function Nav() {
     };
   }, [open]);
 
+  // Close mobile menu when viewport crosses the desktop breakpoint
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 769px)');
+    const handler = (e) => { if (e.matches) setOpen(false); };
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
   // After navigating to home with a scrollTo state, scroll to that section
   useEffect(() => {
     if (location.state?.scrollTo && location.pathname === '/') {
@@ -59,9 +67,10 @@ export default function Nav() {
         <li><button className="nav-anchor" onClick={() => scrollTo('about')}>About</button></li>
         <li><Link to="/menu">Menu</Link></li>
         <li><button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button></li>
+        <li><Link to="/reservation" onClick={close}>Reservation</Link></li>
         <li><Link to="/catering" onClick={close}>Catering</Link></li>
-        <li><Link to="/contact" onClick={close}>Contact</Link></li>
       </ul>
+      
 
       {isMenuPage && (
         <a
@@ -92,8 +101,8 @@ export default function Nav() {
           <button className="nav-anchor" onClick={() => scrollTo('about')}>About</button>
           <Link to="/menu" onClick={close}>Menu</Link>
           <button className="nav-anchor" onClick={() => scrollTo('events')}>Events</button>
+          <Link to="/reservation" onClick={close}>Reservation</Link>
           <Link to="/catering" onClick={close}>Catering</Link>
-          <Link to="/contact" onClick={close}>Contact</Link>
           {isMenuPage && (
             <a
               href="https://www.clover.com/online-ordering/mio-gusto-frisco"

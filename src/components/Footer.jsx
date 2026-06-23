@@ -21,7 +21,7 @@ export default function Footer() {
             <li><Link to="/#events">Events</Link></li>
             <li><Link to="/reservation">Reservations</Link></li>
             <li><Link to="/catering">Catering</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            {/* <li><Link to="/contact">Contact</Link></li> */}
           </ul>
         </div>
 

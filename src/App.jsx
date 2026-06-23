@@ -40,7 +40,6 @@ import Footer from './components/Footer';
 import ReservationPage from './pages/ReservationPage';
 import MenuPage from './pages/MenuPage';
 import CateringPage from './pages/CateringPage';
-import ContactPage from './pages/ContactPage';
 import './App.css';
 
 function HomePage() {
@@ -67,7 +66,6 @@ export default function App() {
         <Route path="/reservation" element={<ReservationPage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/catering" element={<CateringPage />} />
-        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );
