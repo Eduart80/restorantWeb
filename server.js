@@ -8,7 +8,9 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 app.use(express.json());
 
@@ -31,6 +33,7 @@ function validateRequired(fields, body) {
 
 // ── Reservation ──
 app.post('/api/reservation', formLimiter, async (req, res) => {
+  if (!resend) return res.status(503).json({ error: 'Email service not configured.' });
   const err = validateRequired(['name', 'email', 'date', 'time', 'guests'], req.body);
   if (err) return res.status(400).json({ error: err });
 
@@ -64,6 +67,7 @@ app.post('/api/reservation', formLimiter, async (req, res) => {
 
 // ── Catering ──
 app.post('/api/catering', formLimiter, async (req, res) => {
+  if (!resend) return res.status(503).json({ error: 'Email service not configured.' });
   const err = validateRequired(['name', 'email', 'event', 'date', 'guests'], req.body);
   if (err) return res.status(400).json({ error: err });
 
