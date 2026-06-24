@@ -16,15 +16,33 @@ const defaultForm = {
 export default function ReservationPage() {
   const [form, setForm] = useState(defaultForm);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    setForm(defaultForm);
+    setSending(true);
+    setError('');
+
+    try {
+      const res = await fetch('/api/reservation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+      setSubmitted(true);
+      setForm(defaultForm);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again or call us directly.');
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -52,6 +70,7 @@ export default function ReservationPage() {
           </div>
         ) : (
           <form className="res-form res-form-full" onSubmit={handleSubmit}>
+            {error && <p style={{ color: '#e74c3c', gridColumn: '1 / -1' }}>{error}</p>}
             <input
               type="text"
               name="name"
@@ -111,8 +130,9 @@ export default function ReservationPage() {
               type="submit"
               className="btn-solid"
               style={{ border: 'none', cursor: 'pointer', gridColumn: '1 / -1' }}
+              disabled={sending}
             >
-              Reserve Now
+              {sending ? 'Sending...' : 'Reserve Now'}
             </button>
           </form>
         )}
