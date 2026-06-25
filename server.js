@@ -40,7 +40,7 @@ app.post('/api/reservation', formLimiter, async (req, res) => {
   const { name, email, phone, date, time, guests, notes } = req.body;
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: process.env.FROM_EMAIL,
       to: process.env.RESTAURANT_EMAIL,
       replyTo: sanitize(email),
@@ -58,9 +58,10 @@ app.post('/api/reservation', formLimiter, async (req, res) => {
         </table>
       `,
     });
+    console.log('Resend response:', JSON.stringify(result));
     res.json({ ok: true });
   } catch (e) {
-    console.error('Reservation email failed:', e.message);
+    console.error('Reservation email failed:', e);
     res.status(500).json({ error: 'Failed to send. Please call us directly.' });
   }
 });
