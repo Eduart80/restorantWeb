@@ -118,6 +118,24 @@ export default function MenuPage() {
             </div>
           ))}
         </div>
+        <div className="consumer-advisory" style={{ marginTop: '40px', textAlign: 'center' }}>
+          <div className="menu-item-desc">
+            <p>*Gluten-free options available. Please ask for details</p>
+            <p>Consumer Advisory: Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.<br/>
+  Please inform your server of any allergies or special dietary needs.</p>
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '60px' }}>
+          <a
+            href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-solid"
+          >
+            Order Online
+          </a>
+        </div>
       </section>
 
       {/* Drinks & Dessert Section */}
@@ -154,6 +172,24 @@ export default function MenuPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="consumer-advisory" style={{ marginTop: '40px', textAlign: 'center' }}>
+          <div className="menu-item-desc">
+            <p>*Gluten-free options available. Please ask for details</p>
+            <p>Consumer Advisory: Consuming milk, eggs may increase your risk of foodborne illness.<br/>
+  Please inform your server of any allergies or special dietary needs.</p>
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '60px' }}>
+          <a
+            href="https://www.clover.com/online-ordering/mio-gusto-frisco"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-solid"
+          >
+            Order Online
+          </a>
         </div>
       </section>
 
