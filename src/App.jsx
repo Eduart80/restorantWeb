@@ -36,6 +36,7 @@ import About from './components/About';
 import Specials from './components/Specials';
 import ParallaxDivider from './components/ParallaxDivider';
 import Events from './components/Events';
+import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import ReservationPage from './pages/ReservationPage';
 import MenuPage from './pages/MenuPage';
@@ -51,6 +52,7 @@ function HomePage() {
       <Specials />
       <ParallaxDivider />
       <Events />
+      <Gallery />
       <Footer />
     </>
   );
